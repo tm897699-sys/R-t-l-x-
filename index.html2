@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lì Xì May Mắn 2026</title>
+    <style>
+        body { text-align: center; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #d32f2f; color: white; margin: 0; padding: 20px; }
+        h1 { margin-bottom: 30px; text-shadow: 2px 2px 4px #000; }
+        .container { display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; }
+        .envelope { width: 120px; height: 180px; background-color: #ff5252; border-radius: 10px; display: flex; align-items: center; justify-content: center; cursor: pointer; border: 3px solid #ffd700; transition: transform 0.3s; position: relative; overflow: hidden; }
+        .envelope:hover { transform: scale(1.1); }
+        .envelope span { font-size: 50px; }
+        .message { margin-top: 30px; font-size: 24px; font-weight: bold; min-height: 40px; color: #ffd700; }
+        button { margin-top: 20px; padding: 10px 20px; cursor: pointer; background: #ffd700; border: none; font-weight: bold; border-radius: 5px; }
+    </style>
+</head>
+<body>
+
+    <h1>🏮 CHÚC MỪNG NĂM MỚI 2026 🏮</h1>
+    <p>Chọn một bao lì xì để xem vận may của bạn!</p>
+
+    <div class="container">
+        <div class="envelope" onclick="openLixi(this)"><span>🧧</span></div>
+        <div class="envelope" onclick="openLixi(this)"><span>🧧</span></div>
+        <div class="envelope" onclick="openLixi(this)"><span>🧧</span></div>
+        <div class="envelope" onclick="openLixi(this)"><span>🧧</span></div>
+    </div>
+
+    <div class="message" id="result"></div>
+    <button onclick="location.reload()">Chơi lại</button>
+
+    <script>
+        const menhGia = ["10.000đ", "20.000đ", "15.000đ", "2.000đ", "36.886đ", "6.363đ", "Cái nịt!", "Một lời chúc tốt lành"];
+        
+        function openLixi(element) {
+            if (element.style.backgroundColor === "white") return; // Tránh click nhiều lần
+            
+            const random = menhGia[Math.floor(Math.random() * menhGia.length)];
+            element.style.backgroundColor = "white";
+            element.innerHTML = "<span style='font-size: 20px; color: red; font-weight: bold;'>" + random + "</span>";
+            document.getElementById("result").innerText = "Chúc mừng! Bạn nhận được: " + random;
+        }
+    </script>
+</body>
+</html>
